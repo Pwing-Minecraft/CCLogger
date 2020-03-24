@@ -19,7 +19,7 @@ public class Database {
         sqlite = new SQLite(plugin.getLogger(),
                 "CCLogger",
                 "data",
-                plugin.getDataFolder().getAbsolutePath());
+                plugin.getDataFolder());
 //Make sure sqlite is the same as the variable you specified at the top of the plugin!
         try {
             sqlite.open();

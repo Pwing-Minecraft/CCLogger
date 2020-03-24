@@ -18,6 +18,8 @@ package lib.PatPeter.SQLibrary;
 
 import lib.PatPeter.SQLibrary.DatabaseConfig.Parameter;
 
+import java.io.File;
+
 /**
  * @author Balor (aka Antoine Aflalo)
  */
@@ -38,7 +40,7 @@ public class DatabaseFactory {
 		case SQLITE:
 			return new SQLite(config.getLog(), config.getParameter(Parameter.DB_PREFIX),
 					config.getParameter(Parameter.DB_NAME),
-					config.getParameter(Parameter.DB_LOCATION));
+					new File(config.getParameter(Parameter.DB_LOCATION)));
 		default:
 			return null;
 		}
